@@ -9,28 +9,31 @@ import {
   transformer as reactTransformer,
   transformInclude as reactTransformInclude,
 } from "./frameworks/react";
+import {
+  transformer as svelteTransformer,
+  transformInclude as svelteTransformInclude,
+} from "./frameworks/svelte";
 import type { Options, Framework, Transformer } from "./types";
+export type { Options, Framework };
 
 const transformer: Record<Framework, NonNullable<Transformer>> = {
   react: reactTransformer,
-  svelte: () => () => undefined,
+  svelte: svelteTransformer,
   vue: () => () => undefined,
 };
-const transformInclude: Record<Framework, UnpluginOptions["transformInclude"]> =
-  {
-    react: reactTransformInclude,
-    svelte: (id) => /\.svelte$/.test(id),
-    vue: (id) => /\.vue$/.test(id),
-  };
 
-const isProduction = process.env.NODE_ENV === "production";
+const transformInclude: Record<Framework, UnpluginOptions["transformInclude"]> =
+{
+  react: reactTransformInclude,
+  svelte: svelteTransformInclude,
+  vue: (id) => /\.vue$/.test(id),
+};
 
 export const unpluginFactory: UnpluginFactory<Options | undefined> = ({
-  dev,
   framework = "react",
+  assetPath = "phosphor.svg",
+  packageName,
 } = {}) => {
-  const isDevMode = dev && !isProduction;
-
   const spriteSheet: INode = {
     name: "svg",
     type: "element",
@@ -39,16 +42,22 @@ export const unpluginFactory: UnpluginFactory<Options | undefined> = ({
     children: [],
   };
 
+  if (assetPath.startsWith("/")) assetPath = assetPath.slice(1);
+
   return {
     name: "@phosphor-icons/unplugin",
-    apply: dev ? undefined : "build",
+    apply: "build",
     transformInclude: transformInclude[framework],
-    transform: transformer[framework].bind(this)(spriteSheet),
+    transform: transformer[framework].bind(this)(
+      spriteSheet,
+      assetPath,
+      packageName
+    ),
     buildEnd() {
       this.emitFile({
-        fileName: isDevMode ? "phosphor.svg" : "phosphor.svg",
+        fileName: assetPath,
         needsCodeReference: false,
-        source: stringify(spriteSheet, {}),
+        source: stringify(spriteSheet),
         type: "asset",
       });
     },
