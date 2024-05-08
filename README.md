@@ -1,28 +1,24 @@
+> [!WARNING]
+> This plugin is extremely experimental, and is subject to change. Use at your own risk!
+
+<img src="/meta/phosphor-mark-tight-black.png" width="96" align="right" />
+
 # @phosphor-icons/unplugin
 
-[![NPM version](https://img.shields.io/npm/v/@phosphor-icons/unplugin?color=a1b858&label=)](https://www.npmjs.com/package/@phosphor-icons/unplugin)
+An [unplugin](https://github.com/unjs/unplugin) for transforming your Phosphor Icon imports into static SVG sprite sheets. Multiple frameworks, metaframeworks, and build tooling supported, although very much WIP. Explore all our icons at [phosphoricons.com](https://phosphoricons.com).
 
-Starter template for [unplugin](https://github.com/unjs/unplugin).
+[![NPM](https://img.shields.io/npm/v/@phosphor-icons/unplugin.svg?style=flat-square)](https://www.npmjs.com/package/@phosphor-icons/unplugin) [![Travis](https://img.shields.io/github/actions/workflow/status/phosphor-icons/unplugin/main.yml?branch=vite&style=flat-square)](https://travis-ci.com/github/phosphor-icons/unplugin)
 
-## Template Usage
+[![GitHub stars](https://img.shields.io/github/stars/phosphor-icons/unplugin?style=flat-square&label=Star)](https://github.com/phosphor-icons/unplugin)
+[![GitHub forks](https://img.shields.io/github/forks/phosphor-icons/unplugin?style=flat-square&label=Fork)](https://github.com/phosphor-icons/unplugin/fork)
+[![GitHub watchers](https://img.shields.io/github/watchers/phosphor-icons/unplugin?style=flat-square&label=Watch)](https://github.com/phosphor-icons/unplugin)
+[![Follow on GitHub](https://img.shields.io/github/followers/rektdeckard?style=flat-square&label=Follow)](https://github.com/rektdeckard)
 
-To use this template, clone it down using:
-
-```bash
-npx degit unplugin/@phosphor-icons/unplugin my-unplugin
-```
-
-And do a global replacement of `@phosphor-icons/unplugin` with your plugin name.
-
-Then you can start developing your unplugin 🔥
-
-To test your plugin, run: `pnpm run dev`
-To release a new version, run: `pnpm run release`
-
-## Install
+## Installation
 
 ```bash
-npm i @phosphor-icons/unplugin
+npm i -D @phosphor-icons/unplugin
+#^ or whatever package manager you use
 ```
 
 <details>
@@ -30,18 +26,19 @@ npm i @phosphor-icons/unplugin
 
 ```ts
 // vite.config.ts
-import Starter from "@phosphor-icons/unplugin/vite";
+import PhosphorUnplugin from "@phosphor-icons/unplugin/vite";
 
 export default defineConfig({
   plugins: [
-    Starter({
-      /* options */
+    PhosphorUnplugin({
+      framework: "react",
+      assetPath: "/assets/phosphor.svg"
     }),
   ],
 });
 ```
 
-Example: [`playground/`](./playground/)
+Example: [`playground/react-vite`](./playground/react-vite)
 
 <br></details>
 
@@ -50,11 +47,11 @@ Example: [`playground/`](./playground/)
 
 ```ts
 // rollup.config.js
-import Starter from "@phosphor-icons/unplugin/rollup";
+import PhosphorUnplugin from "@phosphor-icons/unplugin/vite";
 
 export default {
   plugins: [
-    Starter({
+    PhosphorUnplugin({
       /* options */
     }),
   ],
@@ -90,6 +87,7 @@ export default defineNuxtConfig({
     [
       "@phosphor-icons/unplugin/nuxt",
       {
+        framework: "vue",
         /* options */
       },
     ],
@@ -110,6 +108,7 @@ module.exports = {
   configureWebpack: {
     plugins: [
       require("@phosphor-icons/unplugin/webpack")({
+        framework: "vue",
         /* options */
       }),
     ],
@@ -125,11 +124,17 @@ module.exports = {
 ```ts
 // esbuild.config.js
 import { build } from "esbuild";
-import Starter from "@phosphor-icons/unplugin/esbuild";
+import PhosphorUnplugin from "@phosphor-icons/unplugin/esbuild";
 
 build({
-  plugins: [Starter()],
+  plugins: [PhosphorUnplugin({ framework: "react" })],
 });
 ```
 
 <br></details>
+
+## Options
+
+
+
+## Usage
