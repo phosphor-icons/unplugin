@@ -7,7 +7,7 @@
 
 An [unplugin](https://github.com/unjs/unplugin) for transforming your Phosphor Icon imports into static SVG sprite sheets. Multiple frameworks, metaframeworks, and build tooling supported, although very much WIP. Explore all our icons at [phosphoricons.com](https://phosphoricons.com).
 
-[![NPM](https://img.shields.io/npm/v/@phosphor-icons/unplugin.svg?style=flat-square)](https://www.npmjs.com/package/@phosphor-icons/unplugin) [![Travis](https://img.shields.io/github/actions/workflow/status/phosphor-icons/unplugin/main.yml?branch=vite&style=flat-square)](https://travis-ci.com/github/phosphor-icons/unplugin)
+[![NPM](https://img.shields.io/npm/v/@phosphor-icons/unplugin.svg?style=flat-square)](https://www.npmjs.com/package/@phosphor-icons/unplugin) [![Travis](https://img.shields.io/github/actions/workflow/status/phosphor-icons/unplugin/ci.yml?branch=main&style=flat-square)](https://travis-ci.com/github/phosphor-icons/unplugin) [![Travis](https://img.shields.io/github/actions/workflow/status/phosphor-icons/unplugin/release.yml?branch=main&style=flat-square&label=release)](https://travis-ci.com/github/phosphor-icons/unplugin)
 
 [![GitHub stars](https://img.shields.io/github/stars/phosphor-icons/unplugin?style=flat-square&label=Star)](https://github.com/phosphor-icons/unplugin)
 [![GitHub forks](https://img.shields.io/github/forks/phosphor-icons/unplugin?style=flat-square&label=Fork)](https://github.com/phosphor-icons/unplugin/fork)
