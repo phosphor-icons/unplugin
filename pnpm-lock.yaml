@@ -11,18 +11,12 @@ importers:
       '@phosphor-icons/core':
         specifier: ^2.1.1
         version: 2.1.1
-      '@webfill/import-meta-resolve':
-        specifier: ^1.0.0
-        version: 1.0.0
       esbuild:
         specifier: '*'
         version: 0.19.8
       estree-walker:
         specifier: ^3.0.3
         version: 3.0.3
-      import-meta-resolve:
-        specifier: ^4.1.0
-        version: 4.1.0
       magic-string:
         specifier: ^0.30.10
         version: 0.30.10
@@ -2267,10 +2261,6 @@ packages:
       '@webassemblyjs/ast': 1.11.6
       '@xtuc/long': 4.2.2
     dev: true
-
-  /@webfill/import-meta-resolve@1.0.0:
-    resolution: {integrity: sha512-Y68hshnzireAt7u3bkF5BkIRM3gzHYhfRWrQk0qd694cL4ih4kvyrtCUraygVqIlpVrkTK6G3cpSYBs7ou0DkA==}
-    dev: false
 
   /@xtuc/ieee754@1.2.0:
     resolution: {integrity: sha512-DX8nKgqcGwsc0eJSqYt5lwP4DH5FlHnmuWWBRy7X0NcaGR0ZtuyeESgMwTYVEtxmsNGY+qit4QYT/MIYTOTPeA==}
