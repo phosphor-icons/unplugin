@@ -204,6 +204,7 @@ And a sprite sheet will be generated and placed at `assetPath` in the public dir
 
 In future, we hope to support dynamic and computed props for all frameworks and build tooling, but at the moment any non-literal props will cause the build process to fail.
 
+<!-- BEGIN_LINKS -->
 ## Our Related Projects
 
 - [@phosphor-icons/homepage](https://github.com/phosphor-icons/homepage) ▲ Phosphor homepage and general info
@@ -239,3 +240,4 @@ If you've made a port of Phosphor and you want to see it here, just open a PR [h
 ## License
 
 MIT © [Phosphor Icons](https://github.com/phosphor-icons)
+<!-- END_LINKS -->
