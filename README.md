@@ -1,9 +1,12 @@
 > [!WARNING]
 > This plugin is extremely experimental, and is subject to change. Use at your own risk!
 
-<img src="/meta/phosphor-mark-tight-black.png" width="96" align="right" />
 
 # @phosphor-icons/unplugin
+
+<!-- BEGIN_LOGO -->
+<img src="/meta/phosphor-mark-tight-black.png" width="96" align="right" />
+<!-- END_LOGO -->
 
 An [unplugin](https://github.com/unjs/unplugin) for transforming your Phosphor Icon imports into static SVG sprite sheets. Multiple frameworks, metaframeworks, and build tooling supported, although very much WIP. Explore all our icons at [phosphoricons.com](https://phosphoricons.com).
 
